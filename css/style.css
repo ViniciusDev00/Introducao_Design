@@ -1,479 +1,175 @@
-/* =========================================
-   IMPORTAÇÃO DE FONTES FUTURISTAS
-   ========================================= */
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Rajdhani:wght@400;600&display=swap');
 
-/* =========================================
-   VARIÁVEIS DE CORES (TEMA CYBERPUNK)
-   ========================================= */
-:root {
-    --fundo-escuro: #050505;
-    --fundo-card: #111111;
-    --neon-ciano: #00ffff;
-    --neon-roxo: #b026ff;
-    --verde-terminal: #39ff14;
-    --texto-claro: #e0e0e0;
+:root{
+    --bg:#050505;
+    --card:#111;
+    --ciano:#00ffff;
+    --roxo:#b026ff;
+    --verde:#39ff14;
+    --texto:#e0e0e0;
 }
 
-/* =========================================
-   RESETS E CONFIGURAÇÕES GERAIS
-   ========================================= */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-body {
-    background-color: var(--fundo-escuro);
-    color: var(--texto-claro);
-    font-family: 'Rajdhani', sans-serif;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    overflow-x: hidden;
+body{
+    background:var(--bg);
+    color:var(--texto);
+    font-family:'Rajdhani',sans-serif;
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
 }
 
-h1, h2, h3 {
-    font-family: 'Orbitron', sans-serif;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+h1,h2,h3{
+    font-family:'Orbitron',sans-serif;
 }
 
-/* =========================================
-   CABEÇALHO E NAVEGAÇÃO NEON
-   ========================================= */
-header {
-    background: rgba(17, 17, 17, 0.95);
-    padding: 25px 0;
-    text-align: center;
-    border-bottom: 2px solid var(--neon-ciano);
-    box-shadow: 0 0 20px rgba(0, 255, 255, 0.15);
+header{
+    text-align:center;
+    padding:20px;
+    border-bottom:2px solid var(--ciano);
 }
 
-header h1 {
-    color: var(--neon-ciano);
-    text-shadow: 0 0 10px var(--neon-ciano);
-    margin-bottom: 20px;
-    font-size: 2.5rem;
-    letter-spacing: 3px;
+header h1{
+    color:var(--ciano);
+    margin-bottom:15px;
 }
 
-nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    flex-wrap: wrap;
+nav ul{
+    list-style:none;
+    display:flex;
+    justify-content:center;
+    gap:15px;
 }
 
-nav ul li a {
-    color: var(--texto-claro);
-    text-decoration: none;
-    font-size: 1.2rem;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    padding: 10px 25px;
-    border: 1px solid transparent;
-    border-radius: 4px;
-    display: inline-block;
-    background: rgba(255, 255, 255, 0.02); /* Fundo muito sutil */
+nav a{
+    text-decoration:none;
+    color:white;
+    padding:8px 15px;
 }
 
-/* Efeito de Hover e Página Ativa como um botão iluminado */
-nav ul li a:hover, nav ul li a.active {
-    color: var(--neon-roxo);
-    text-shadow: 0 0 8px var(--neon-roxo);
-    border: 1px solid var(--neon-roxo);
-    background: rgba(176, 38, 255, 0.1);
-    box-shadow: inset 0 0 15px rgba(176, 38, 255, 0.2);
+nav a:hover,
+nav a.active{
+    color:var(--roxo);
 }
 
-/* =========================================
-   ESTRUTURA PRINCIPAL
-   ========================================= */
-main {
-    flex: 1;
-    padding: 40px 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-    width: 100%;
+main{
+    flex:1;
+    max-width:1200px;
+    margin:auto;
+    padding:30px 20px;
 }
 
-/* =========================================
-   PÁGINA 1: EVOLUÇÃO (CARDS FLUTUANTES)
-   ========================================= */
-@keyframes flutuar {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-15px); }
-    100% { transform: translateY(0px); }
+.escolhas-container,
+.galeria-holografica{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
 }
 
-.escolhas-container {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    margin-bottom: 50px;
-    flex-wrap: wrap;
+.card-escolha,
+.card-jogo{
+    background:var(--card);
+    border:1px solid #333;
+    border-radius:10px;
+    padding:20px;
+    text-align:center;
+    transition:.3s;
 }
 
-.card-escolha {
-    background: var(--fundo-card);
-    border: 2px solid #333;
-    border-radius: 10px;
-    padding: 15px;
-    cursor: pointer;
-    text-align: center;
-    width: 300px;
-    animation: flutuar 4s infinite ease-in-out;
-    transition: all 0.4s ease;
+.card-escolha:hover,
+.card-jogo:hover{
+    border-color:var(--ciano);
+    transform:scale(1.03);
 }
 
-/* Atrasos para os cards não flutuarem em sincronia */
-.card-escolha:nth-child(2) { animation-delay: 1s; }
-.card-escolha:nth-child(3) { animation-delay: 2s; }
-
-.card-escolha img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 5px;
-    margin-bottom: 15px;
-    filter: grayscale(80%);
-    transition: 0.4s;
+.card-escolha img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+    border-radius:5px;
+    margin-bottom:10px;
 }
 
-.card-escolha:hover {
-    border-color: var(--neon-ciano);
-    box-shadow: 0 0 20px var(--neon-ciano);
-    transform: scale(1.05);
-    animation-play-state: paused;
+.card-jogo h3{
+    color:var(--roxo);
+    margin-bottom:10px;
 }
 
-.card-escolha:hover img {
-    filter: grayscale(0%);
+.card-jogo ul{
+    margin-left:20px;
 }
 
-/* Linhas do tempo (Ocultas por padrão) */
-.linhagem {
-    display: none;
-    background: rgba(17, 17, 17, 0.8);
-    border-left: 4px solid var(--neon-roxo);
-    padding: 30px;
-    border-radius: 0 10px 10px 0;
-    margin-top: 20px;
-    animation: fadeIn 0.5s ease-in;
+.linhagem{
+    display:none;
+    margin-top:30px;
+    padding:20px;
+    background:var(--card);
+    border-left:4px solid var(--roxo);
 }
 
-.linhagem.ativa {
-    display: block;
+.linhagem.ativa{
+    display:block;
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateX(-20px); }
-    to { opacity: 1; transform: translateX(0); }
+.terminal-container{
+    max-width:600px;
+    margin:auto;
+    border:2px solid var(--verde);
+    padding:25px;
+    border-radius:5px;
 }
 
-.linhagem ul {
-    list-style: none;
-    margin-top: 15px;
+.terminal-form label{
+    display:block;
+    margin:10px 0 5px;
+    color:var(--verde);
 }
 
-.linhagem ul li {
-    margin-bottom: 10px;
-    font-size: 1.1rem;
+.terminal-form input,
+.terminal-form textarea{
+    width:100%;
+    padding:10px;
+    background:#000;
+    color:var(--verde);
+    border:1px solid #333;
 }
 
-.linhagem ul li strong {
-    color: var(--neon-ciano);
+.btn-start{
+    width:100%;
+    margin-top:15px;
+    padding:12px;
+    border:2px solid var(--verde);
+    background:none;
+    color:var(--verde);
+    cursor:pointer;
 }
 
-/* =========================================
-   PÁGINA 2: COFRE DE CLÁSSICOS (HOLOGRÁFICO)
-   ========================================= */
-.galeria-holografica {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+.btn-start:hover{
+    background:var(--verde);
+    color:#000;
 }
 
-.card-jogo {
-    background: linear-gradient(135deg, rgba(17,17,17,1) 0%, rgba(34,34,34,1) 100%);
-    border: 1px solid #444;
-    padding: 20px;
-    border-radius: 10px;
-    position: relative;
-    overflow: hidden;
-    transition: 0.4s;
+footer{
+    text-align:center;
+    padding:15px;
+    border-top:1px solid #333;
 }
 
-.card-jogo::before {
-    content: '';
-    position: absolute;
-    top: -50%; left: -50%;
-    width: 200%; height: 200%;
-    background: radial-gradient(circle, rgba(176,38,255,0.15) 0%, transparent 70%);
-    opacity: 0;
-    transition: 0.5s;
-    pointer-events: none;
+.link-externo{
+    color:var(--ciano);
 }
 
-.card-jogo:hover {
-    border-color: var(--neon-roxo);
-    box-shadow: 0 0 25px rgba(176, 38, 255, 0.5);
-    transform: translateY(-10px);
-}
-
-.card-jogo:hover::before {
-    opacity: 1;
-}
-
-.card-jogo h3 {
-    color: var(--neon-roxo);
-    margin-bottom: 15px;
-    font-size: 1.5rem;
-}
-
-.card-jogo ul {
-    list-style: square;
-    margin-left: 20px;
-    color: #ccc;
-    font-size: 1.1rem;
-}
-
-.card-jogo ul li {
-    margin-bottom: 8px;
-}
-
-/* =========================================
-   PÁGINA 3: TERMINAL DE CONTATO
-   ========================================= */
-.terminal-container {
-    background: #0a0a0a;
-    border: 2px solid var(--verde-terminal);
-    border-radius: 5px;
-    padding: 40px;
-    max-width: 600px;
-    margin: 0 auto;
-    box-shadow: inset 0 0 20px rgba(57, 255, 20, 0.2), 0 0 15px rgba(57, 255, 20, 0.5);
-}
-
-.terminal-container h2 {
-    color: var(--verde-terminal);
-    text-shadow: 0 0 5px var(--verde-terminal);
-    margin-bottom: 20px;
-}
-
-.terminal-form label {
-    display: block;
-    color: var(--verde-terminal);
-    font-family: 'Courier New', Courier, monospace;
-    margin-bottom: 5px;
-    font-weight: bold;
-}
-
-.terminal-form input, .terminal-form textarea {
-    width: 100%;
-    background: transparent;
-    border: none;
-    border-bottom: 2px solid #333;
-    color: var(--verde-terminal);
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 1.2rem;
-    padding: 10px 0;
-    margin-bottom: 30px;
-    outline: none;
-    transition: 0.3s;
-}
-
-.terminal-form input:focus, .terminal-form textarea:focus {
-    border-bottom-color: var(--verde-terminal);
-    box-shadow: 0 5px 5px -5px var(--verde-terminal);
-}
-
-.btn-start {
-    display: block;
-    width: 100%;
-    background: transparent;
-    border: 2px solid var(--verde-terminal);
-    color: var(--verde-terminal);
-    font-family: 'Orbitron', sans-serif;
-    font-size: 1.5rem;
-    padding: 15px;
-    cursor: pointer;
-    text-transform: uppercase;
-    transition: 0.3s;
-    animation: piscar 2s infinite;
-}
-
-.btn-start:hover {
-    background: var(--verde-terminal);
-    color: #000;
-    box-shadow: 0 0 20px var(--verde-terminal);
-    animation: none;
-}
-
-@keyframes piscar {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.5; }
-}
-
-/* =========================================
-   RODAPÉ E LINKS
-   ========================================= */
-footer {
-    text-align: center;
-    padding: 20px;
-    background: #111;
-    border-top: 1px solid #333;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 0.9rem;
-    color: #666;
-}
-
-a.link-externo {
-    color: var(--neon-ciano);
-    text-decoration: none;
-    border-bottom: 1px dashed var(--neon-ciano);
-}
-
-a.link-externo:hover {
-    text-shadow: 0 0 8px var(--neon-ciano);
-}
-
-
-/* =========================================
-   BLINDAGEM E RESPONSIVIDADE TOTAL (CELULAR)
-   Não afeta em nada a visualização do PC
-   ========================================= */
-@media (max-width: 768px) {
-    /* Ajustes Gerais de Tela e Títulos */
-    header {
-        padding: 20px 15px;
+@media(max-width:768px){
+    nav ul{
+        flex-direction:column;
     }
 
-    header h1 {
-        font-size: 1.6rem; 
-        letter-spacing: 2px;
-        margin-bottom: 20px;
+    header h1{
+        font-size:1.5rem;
     }
-    
-    /* Transformação do menu em botões de terminal no mobile */
-    nav ul {
-        flex-direction: column; 
-        gap: 10px;
-        width: 100%;
-        padding: 0 10px;
-    }
-
-    nav ul li {
-        width: 100%;
-    }
-
-    nav ul li a {
-        display: block; /* Ocupa a largura total */
-        width: 100%;
-        padding: 12px 0;
-        font-size: 1.1rem;
-        border: 1px solid #333; /* Borda padrão no mobile */
-        background: rgba(0, 0, 0, 0.5);
-    }
-
-    /* O botão ativo no mobile ganha o contorno roxo completo */
-    nav ul li a:hover, nav ul li a.active {
-        border: 1px solid var(--neon-roxo);
-        background: rgba(176, 38, 255, 0.15);
-    }
-
-    main {
-        padding: 25px 12px; /* Margem confortável nas bordas do celular */
-    }
-
-    h2 {
-        font-size: 1.4rem !important; /* Ajusta os h2 das páginas */
-    }
-
-    /* Página 1: Ajuste dos Cards Flutuantes */
-    .escolhas-container {
-        justify-content: center;
-        gap: 25px;
-    }
-
-    .card-escolha {
-        width: 100%;
-        max-width: 290px; /* Garante que caiba até em telas de 320px sem vazar */
-        margin: 0 auto;
-        animation: flutuarMobile 4s infinite ease-in-out; /* Flutuação calibrada para telas pequenas */
-    }
-
-    .card-escolha img {
-        height: 160px; /* Reduz ligeiramente a foto no mobile para ficar harmônico */
-    }
-
-    /* Linhas do tempo reveladas */
-    .linhagem {
-        padding: 20px 15px; /* Reduz o padding para sobrar espaço para o texto */
-        border-left-width: 3px;
-        border-radius: 0 5px 5px 0;
-    }
-
-    .linhagem h2 {
-        font-size: 1.2rem !important;
-    }
-
-    .linhagem ul li {
-        font-size: 1rem;
-    }
-
-    /* Página 2: Ajuste do Grid Holográfico */
-    .galeria-holografica {
-        grid-template-columns: 1fr; /* Força os cards de jogos a empilharem perfeitamente */
-        gap: 20px;
-    }
-
-    .card-jogo {
-        padding: 15px;
-    }
-
-    .card-jogo h3 {
-        font-size: 1.3rem;
-    }
-
-    .card-jogo ul {
-        font-size: 1rem;
-        margin-left: 15px;
-    }
-
-    /* Página 3: Otimização do Espaço do Formulário */
-    .terminal-container {
-        padding: 25px 15px; /* Libera mais espaço horizontal para digitação */
-        width: 100%;
-    }
-
-    .terminal-container h2 {
-        font-size: 1.3rem;
-    }
-
-    .terminal-form input, .terminal-form textarea {
-        font-size: 1rem;
-        margin-bottom: 20px;
-    }
-
-    .btn-start {
-        font-size: 1.2rem;
-        padding: 12px;
-    }
-
-    /* Rodapé */
-    footer {
-        padding: 15px 10px;
-        font-size: 0.8rem;
-    }
-}
-
-/* Animação de levitação suavizada para dispositivos móveis */
-@keyframes flutuarMobile {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-8px); }
-    100% { transform: translateY(0px); }
 }
