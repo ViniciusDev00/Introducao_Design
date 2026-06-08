@@ -3,97 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SYS.GAME | Evolução</title>
+    <title>Foco & Estudo | Home</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
     <header>
-        <h1>SYS.GAME_HISTORY</h1>
+        <h1>Foco & Estudo</h1>
         <nav>
             <ul>
-                <li><a href="index.html" class="active">EVOLUÇÃO</a></li>
-                <li><a href="sobre.html">COFRE DE CLÁSSICOS</a></li>
-                <li><a href="contato.html">CONTATO</a></li>
+                <li><a href="index.html" class="active">Início</a></li>
+                <li><a href="sobre.html">Métodos</a></li>
+                <li><a href="contato.html">Contato</a></li>
             </ul>
         </nav>
+        <button id="btn-tema">Alternar Modo Escuro</button>
     </header>
 
     <main>
-        <h2 style="text-align: center; margin-bottom: 40px; color: var(--neon-ciano);">Selecione o Protocolo de Inicialização</h2>
-        
-        <section class="escolhas-container">
-            <div class="card-escolha" onclick="mostrarLinhagem('linha-arcades')">
-                <img src="img/arcade.png
-                " alt="Máquinas de Arcade Antigas">
-                <h3>Arcades</h3>
-                <p>A era de ouro dos fliperamas.</p>
-            </div>
-
-            <div class="card-escolha" onclick="mostrarLinhagem('linha-consoles')">
-                <img src="img/mesa.png" alt="Consoles de Mesa">
-                <h3>Consoles de Mesa</h3>
-                <p>O entretenimento invade as salas.</p>
-            </div>
-
-            <div class="card-escolha" onclick="mostrarLinhagem('linha-portateis')">
-                <img src="img/portatil.png" alt="Consoles Portáteis">
-                <h3>Portáteis</h3>
-                <p>O poder dos jogos na palma da mão.</p>
-            </div>
+        <section class="banner">
+            <h2>Turbine seus estudos e sua organização</h2>
+            <p>Aprenda técnicas validadas para melhorar seu foco e render mais no dia a dia.</p>
+            <img src="img/imagem.jpg" alt="Estudante concentrado com livros e notebook">
         </section>
 
-        <section id="linha-arcades" class="linhagem">
-            <h2>Protocolo: Arcades Autorizado</h2>
-            <br>
-            <p>Os arcades são máquinas dedicadas grandes e caras que rodam apenas um jogo. São conhecidos no Brasil também como fliperamas. Com as tecnologias atuais pessoas comuns podem construir seus próprios arcades, a maioria sendo multi-jogos.</p>
-            <br>
+        <section class="conteudo">
+            <h3>Por onde começar?</h3>
+            <p>Organizar sua rotina é o primeiro passo para o sucesso acadêmico. Veja o que você vai encontrar por aqui:</p>
             <ul>
-                <li><strong>1ª Geração (1966 a 1970)</strong> – máquinas eletromecânicas que utilizavam modelos analógicos de exibição de imagens interativas, destacando empresas como a SEGA e Taito.</li>
-                <li><strong>2ª Geração (1971 a 1977)</strong> – criação dos primeiros arcades eletrônicos como Galaxy Game, Computer Space e Pong, que eclodiram o mercado de jogos eletrônicos mundialmente.</li>
-                <li><strong>3ª Geração (1978 a 1983)</strong> – conhecida como era de ouro dos videogames com a aparição de empresas e jogos icônicos como Space Invaders, Pac-Man e Donkey Kong.</li>
-                <li><strong>4ª Geração (1984 a 1990)</strong> – pós crash dos consoles de mesa, são introduzidas novas tecnologias e hardware para os arcades, gerando novos tipos de jogo como side-scrolling e jogos de luta complexos.</li>
-                <li><strong>5ª Geração (1991 a 1999)</strong> – como forma de renascimento da cultura dos arcades frente aos consoles e computadores, os jogos de luta se tornam a nova forma de entretenimento neste segmento, sustentando o mercado por quase uma década.</li>
-                <li><strong>6ª Geração (2000 até hoje)</strong> – declínio dos arcades, que desenvolveram formas de controle em máquinas específicas para se diferenciar dos consoles, criando nichos de mercado e sobrevivendo em casas de diversão para crianças; pessoas comuns podem construir seu próprio arcade em virtude das tecnologias de baixo custo como Arduino e telas de LED.</li>
+                <li>Técnicas de gerenciamento de tempo.</li>
+                <li>Dicas para evitar a procrastinação.</li>
+                <li>Ferramentas digitais gratuitas.</li>
             </ul>
-        </section>
-
-        <section id="linha-consoles" class="linhagem">
-            <h2>Protocolo: Consoles Autorizado</h2>
-            <br>
-            <p>Os consoles de mesa são também chamados de consoles de video game. Compreendem os aparelhos que processam jogos a partir de diversas mídias programadas com jogos. Necessitam de um dispositivo de tela para se conectarem. Você pode conhecer o acervo de consoles de mesa do Museu Bojogá <a href="https://bojoga.com.br/acervo/consoles-de-mesa/" target="_blank" class="link-externo">clicando aqui</a>.</p>
-            <br>
-            <ul>
-                <li><strong>1ª Geração (1972 a 1976)</strong> – Com a criação do Magnavox Odyssey e de Pong e seus clones, iniciou-se uma corrida pelos consoles de mesa, a partir do jogo de paredão e suas variações.</li>
-                <li><strong>2ª Geração (1977 a 1983)</strong> – Início da era dos cartuchos de videogame, consolidando empresas e o mercado; compartilha o período dos arcades como a era de ouro dos videogames. Época do Atari 2600, Odyssey², Colecovision, Intellivision.</li>
-                <li><strong>3ª Geração (1984 a 1986)</strong> – Após o crash dos videogames de 1983, empresas japonesas apresentam os videogames de 8 bits, buscando retomar um mercado destruído e dominado pelos arcades; momento de afirmação de empresas como Nintendo com o NES e Sega com o Master System.</li>
-                <li><strong>4ª Geração (1987 a 1992)</strong> – Com o advento dos consoles de 16 bits, essa geração foi conhecida como a guerra dos consoles (Super Nintendo e Mega Drive), já dominando o mercado de jogos eletrônicos no mundo, com suas franquias e ações de marketing agressivos.</li>
-                <li><strong>5ª Geração (1993 a 1997)</strong> – Rompe-se a era dos consoles de 32 e 64 bits, desconstruindo uma evolução de gerações por arquitetura de processador, mas por manutenção de franquias (Nintendo 64 e Sega Saturn) e entradas de novos fabricantes, como a Sony e seu Playstation e a mídia de CD.</li>
-                <li><strong>6ª Geração (1998 a 2004)</strong> – Os consoles de mesa abandonam os cartuchos, adotando o DVD como padrão; volta-se o foco nos jogos online e nas convergências tecnológicas. Os consoles (Playstation 2 e Gamecube) passam a dedicar seu processamento a jogos com performance comparável aos computadores pessoais; marca o retorno dos Estados Unidos ao mercado de jogos com a empresa Microsoft e seu Xbox.</li>
-                <li><strong>7ª Geração (2005 a 2011)</strong> – Na tentativa de garantir exclusividade contra concorrentes de diversas plataformas, os consoles de mesa se tornam máquinas de performance de 128-bits e total conectividade com serviços de internet; novas formas de interação com os usuários são as apostas para gerar uma experiência única para dedicados jogadores. Destaque para o Xbox 360, Playstation 3 e Nintendo Wii.</li>
-                <li><strong>8ª Geração (2012 até 2019)</strong> – O auge de tudo o que um console de mesa pôde oferecer ao longo de sua existência: grandes franquias, a maior capacidade de armazenamento (blu-ray), conectividade total, exclusividade, experiências com novas formas de interação e potência em processamento.</li>
-                <li><strong>9ª Geração (2020 até hoje)</strong> – Vivemos uma transformação onde os consoles dedicados se misturam com a computação em nuvem e novas experiências sensoriais promovidas pelas redes conectadas e o metaverso. O Playstation 5 e o Xbox Series X/S ainda se colocam como novidade.</li>
-            </ul>
-        </section>
-
-        <section id="linha-portateis" class="linhagem">
-            <h2>Protocolo: Portáteis Autorizado</h2>
-            <br>
-            <p>Os consoles portáteis são máquinas multi-jogo dedicadas baratas, isto é, um sonho para qualquer jogador: ter um console que tenha a possibilidade de troca de jogos, sem a necessidade de uma TV e que não seja do tamanho de um arcade. Você pode conhecer o acervo de consoles portáteis do Museu Bojogá <a href="https://bojoga.com.br/acervo/consoles-portateis/" target="_blank" class="link-externo">clicando aqui</a>.</p>
-            <br>
-            <ul>
-                <li><strong>1ª Geração (1979 a 1988)</strong> – os primeiros consoles portáteis multijogo foram experiências diversas que procuravam entreter jogadores.</li>
-                <li><strong>2ª Geração (1989 a 1997)</strong> – o lançamento do Game Boy pela Nintendo inaugura a era de 8 bits nos portáteis e definindo o mercado como um dos mais bem sucedidos consoles vendidos no mundo; em pouco tempo os concorrentes lançavam novos produtos para morder a nova e lucrativa fatia de mercado.</li>
-                <li><strong>3ª Geração (1998 a 2003)</strong> – a era dos consoles portáteis de 16 bits chega com o Neo Geo Pocket e o Game Boy Advance; diversas empresas criam novos tipos de consoles portáteis, principalmente na Ásia.</li>
-                <li><strong>4ª Geração (2004 a 2010)</strong> – é lançado o Nintendo DS, dando novos rumos ao entretenimento de jogos portáteis, com duas telas de jogo sendo uma sensível ao toque; a Sony lança o PSP e se mostra concorrente forte para derrubar a hegemonia da Nintendo.</li>
-                <li><strong>5ª Geração (2011 a 2015)</strong> – como forma de redesenhar a forma de jogar, é lançado o Nintendo 3DS, mas sem muito resultado; a Sony atualiza sua linha de portáteis com o PS Vita; novos projetos de portáteis com sistemas embarcados com Android são lançados, entre eles o Nvidia Shield Portable.</li>
-                <li><strong>6ª Geração (2016 até hoje)</strong> – nomes como fusão de tecnologias, globalização e conectividade fizeram os consoles portáteis se aproximarem de seus irmãos maiores; é lançado o Nintendo Switch, um console híbrido que tanto pode ser jogado como portátil como na TV.</li>
-            </ul>
+            
+            <p>Para se aprofundar, recomendamos ler o artigo sobre a técnica Pomodoro no <a href="https://pt.wikipedia.org/wiki/T%C3%A9cnica_pomodoro" target="_blank">Wikipédia</a>.</p>
         </section>
     </main>
 
     <footer>
-        <p>Desenvolvido por - <a href="https://github.com/viniciusbiancoloni" target="_blank" class="link-externo"><i>Vinicius Biancoloni</i></a> | <a href="https://github.com/andrewgonzaga" target="_blank" class="link-externo"><i>Andrew Gonzaga</i></a> | <a href="https://github.com/aendermuller" target="_blank" class="link-externo"><i>Aender Muller</i></a> - &copy; 2026</p>
+        <p>&copy; 2026 - Desenvolvido por [Seu Nome / Dupla] | Trabalho de Web</p>
     </footer>
 
     <script src="js/script.js"></script>
